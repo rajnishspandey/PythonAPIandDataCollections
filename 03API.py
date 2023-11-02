@@ -1,4 +1,6 @@
 import requests
+import pandas as pd
+import matplotlib.pyplot as plt
 
 filename = "https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%205/Labs/Golden_State.pkl"
 
@@ -19,4 +21,12 @@ games_away=games[games['MATCHUP']=='GSW @ TOR']
 
 games_home['PLUS_MINUS'].mean()
 games_away['PLUS_MINUS'].mean()
+
+fig, ax = plt.subplots()
+
+
+games_away.plot(x='GAME_DATE',y='PLUS_MINUS', ax=ax)
+games_home.plot(x='GAME_DATE',y='PLUS_MINUS', ax=ax)
+ax.legend(["away", "home"])
+plt.show()
 
