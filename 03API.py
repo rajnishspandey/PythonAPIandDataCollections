@@ -30,3 +30,5 @@ games_home.plot(x='GAME_DATE',y='PLUS_MINUS', ax=ax)
 ax.legend(["away", "home"])
 plt.show()
 
+print(games_home['PTS'].mean())
+
